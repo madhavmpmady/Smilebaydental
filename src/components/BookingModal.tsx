@@ -23,7 +23,7 @@ const BookingModal: React.FC<Props> = ({ open, onClose, phone = '+919020011223',
         <div className="flex justify-between items-start">
           <h3 className="text-lg font-semibold text-gray-900">Book Appointment</h3>
           <button className="text-gray-600 hover:text-gray-800" onClick={onClose} aria-label="Close booking dialog">
-            <X size={20} />
+            <X className="w-5 h-5" />
           </button>
         </div>
 

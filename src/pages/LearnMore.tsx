@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LearnMore = () => {
   return (
     <main className="min-h-screen py-24">

@@ -22,6 +22,69 @@
 
   .animate-fade-in-delay {
     animation: fadeIn 0.8s ease-in-out 0.3s both;
+
+/* Fine-tuning for narrow phones (approx iPhone 17 Pro width) */
+@media (max-width: 430px) {
+  .doctor-hero {
+    height: 200px !important;
+  }
+
+  .doctor-profile-card {
+    margin-top: -56px; /* less overlap */
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .doctor-avatar {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .doctor-profile-card h2 {
+    font-size: 1.05rem; /* slightly smaller */
+  }
+
+  .doctor-profile-card p {
+    font-size: 0.95rem;
+  }
+
+  .doctor-profile-card a.inline-flex {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+
+  .doctor-profile-card .ring-4 {
+    box-shadow: 0 0 0 2px white; /* make avatar ring subtle on small */
+  }
+
+  .doctor-profile-card .max-w-2xl {
+    max-width: 100% !important;
+  }
+
+  .doctor-profile-card img[alt="map"] {
+    height: 120px !important;
+  }
+
+  .doctor-profile-card iframe {
+    height: 120px !important;
+  }
+
+  /* Video/FAQ tweaks */
+  .video-faq .aspect-video {
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+
+  .video-faq h3 {
+    font-size: 1rem;
+  }
+
+  .video-faq button.inline-flex,
+  .video-faq .inline-flex {
+    width: 100%;
+    justify-content: center;
+  }
+}
   }
 
   @keyframes fadeIn {

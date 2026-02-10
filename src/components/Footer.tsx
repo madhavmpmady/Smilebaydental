@@ -1,5 +1,5 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '../assets/logo white.svg';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const quickLinks = [
@@ -19,13 +19,7 @@ const Footer = () => {
     'Pediatric Dentistry',
     'Dental Implants',
   ];
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  ];
+  
 
   return (
     <footer id="contact" className="bg-[#c084fc] text-white">
@@ -39,16 +33,18 @@ const Footer = () => {
               Compassionate dentistry with modern technology — preventive, restorative and cosmetic care for the whole family.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-200"
-                >
-                  <social.icon className="text-white" size={18} />
-                </a>
-              ))}
+              <a href="#" aria-label="Facebook" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-200">
+                <Facebook className="w-4 h-4 text-white" />
+              </a>
+              <a href="#" aria-label="Twitter" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-200">
+                <Twitter className="w-4 h-4 text-white" />
+              </a>
+              <a href="#" aria-label="Instagram" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-200">
+                <Instagram className="w-4 h-4 text-white" />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors duration-200">
+                <Linkedin className="w-4 h-4 text-white" />
+              </a>
             </div>
           </div>
 
@@ -88,20 +84,20 @@ const Footer = () => {
             <h4 className="text-white font-bold text-lg mb-6">Contact Info</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="text-white flex-shrink-0 mt-1" size={18} />
+                <MapPin className="w-4 h-4 flex-shrink-0 mt-1 text-white" />
                 <span className="text-white">
                   Kodal Nadakkavu, Kozhikode,<br />
                    Pantheeramkavu, Kerala 673019
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="text-white flex-shrink-0" size={18} />
+                <Phone className="w-4 h-4 flex-shrink-0 text-white" />
                 <a href="tel:5125550100" className="text-white hover:text-white transition-colors">
                   +91 9020011223
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="text-white flex-shrink-0" size={18} />
+                <Mail className="w-4 h-4 flex-shrink-0 text-white" />
                 <a href="mailto:info@motherdentalclinic.com" className="text-white hover:text-white transition-colors">
                   nadiark@yahoo.com
                 </a>

@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Doctors from './components/Doctors';
 import Footer from './components/Footer';
 import LearnMore from './pages/LearnMore';
+import DoctorProfile from './pages/DoctorProfile';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             }
           />
           <Route path="/learn-more" element={<LearnMore />} />
+          <Route path="/doctor/:id" element={<DoctorProfile />} />
         </Routes>
         <Footer />
       </div>

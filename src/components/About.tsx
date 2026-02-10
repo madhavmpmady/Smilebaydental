@@ -41,7 +41,10 @@ const About = () => {
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="text-purple-600" size={24} />
+                    {(() => {
+                      const Icon = feature.icon as any;
+                      return <Icon className="w-6 h-6 text-purple-600" />;
+                    })()}
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>

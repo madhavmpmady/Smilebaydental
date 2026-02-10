@@ -10,15 +10,16 @@ const Navbar = () => {
   const [showBookingModal, setShowBookingModal] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Force white background on doctor profile pages
+  const forceWhite = location.pathname.startsWith('/doctor');
 
   const navLinks = [
     { name: 'Home', target: 'home' },
@@ -29,7 +30,6 @@ const Navbar = () => {
   ];
 
   const handleNav = (target: string) => {
-    // If we're not on the home page, navigate there first and then scroll
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -44,27 +44,19 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-4' : 'bg-white py-6'
+      className={`fixed top-0 left-0 sm:mb-[2emnpm] right-0 z-50 transition-all duration-300   ${
+        isScrolled || isMobileMenuOpen || forceWhite ? 'bg-white py-[1rem] shadow-md' : 'bg-transparent py-6'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
-          {/* --- LOGO SECTION MODIFIED --- */}
-          {/* We keep w-20 on the parent to reserve horizontal space */}
-          <div className="relative flex items-center w-20"> 
-            <img 
-              src={logo} 
-              alt="Smile Bay Logo" 
-              // w-32 h-32 makes it much bigger than the nav container
-              // absolute positioning lets it overflow without stretching the nav
-              className={`absolute top-1/2 left-0 -translate-y-1/2 w-[12rem] h-32 max-w-none transition-all duration-300 ${
-                 isScrolled ? 'scale-90' : 'scale-100' 
-              }`} 
+          <div className="relative flex items-center w-20">
+            <img
+              src={logo}
+              alt="Smile Bay Logo"
+              className="absolute top-1/2 left-0 -translate-y-1/2 w-[12rem] h-32 max-w-none transition-all duration-300"
             />
           </div>
-          {/* ----------------------------- */}
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -87,15 +79,20 @@ const Navbar = () => {
           </div>
 
           <button
-            className="md:hidden text-gray-700"
+            className={`md:hidden p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-200 ${
+              isMobileMenuOpen
+                ? 'bg-white text-gray-900 border border-gray-100 shadow-md'
+                : 'bg-transparent text-gray-700'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4 bg-white shadow-sm rounded-b-md">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <button

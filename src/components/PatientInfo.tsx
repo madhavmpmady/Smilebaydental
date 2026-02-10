@@ -71,9 +71,12 @@ const PatientInfo = () => {
               key={index}
               className="bg-gradient-to-br from-purple-50 to-teal-50 rounded-xl p-8 shadow-md"
             >
-              <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
-                  <card.icon className="text-white" size={24} />
+                  {(() => {
+                    const Icon = card.icon as any;
+                    return <Icon className="w-6 h-6" />;
+                  })()}
                 </div>
                 <h4 className="text-2xl font-bold text-gray-900">{card.title}</h4>
               </div>
@@ -107,9 +110,9 @@ const PatientInfo = () => {
                     {faq.question}
                   </span>
                   {openFaq === index ? (
-                    <ChevronUp className="text-purple-600 flex-shrink-0" size={24} />
+                    <ChevronUp className="w-6 h-6" />
                   ) : (
-                    <ChevronDown className="text-gray-400 flex-shrink-0" size={24} />
+                    <ChevronDown className="w-6 h-6" />
                   )}
                 </button>
                 {openFaq === index && (
