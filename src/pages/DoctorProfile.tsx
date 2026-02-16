@@ -77,7 +77,7 @@ const DoctorProfile: React.FC = () => {
                 {doctor.title && <p className="text-sm text-gray-600 mt-1">{doctor.title}</p>}
                 <p className="text-purple-600 font-semibold mt-1">{doctor.specialty}</p>
                 <p className="text-sm text-gray-600 mt-2 max-w-2xl">{doctor.bio}</p>
-                {doctor.fullBio && <p className="text-sm text-gray-700 mt-4 max-w-3xl">{doctor.fullBio}</p>}
+
                 <div className="mt-4 flex flex-col sm:flex-row items-center sm:items-center gap-3">
                   <a href={`mailto:contact@smilebay.example?subject=Appointment with ${encodeURIComponent(doctor.name)}`} className="inline-flex items-center gap-2 px-3 py-3 border rounded-lg text-sm w-full sm:w-auto justify-center">
                     <Mail className="w-4 h-4" /> Email
@@ -92,7 +92,7 @@ const DoctorProfile: React.FC = () => {
             <div className="mt-8 space-y-8">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">About</h3>
-                <p className="text-gray-700 leading-relaxed">{doctor.bio} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisi vel consectetur interdum, nisl nisi dictum urna, vitae convallis mi elit id orci.</p>
+                <p className="text-gray-700 leading-relaxed">{doctor.fullBio || doctor.bio}</p>
               </div>
 
               <div>

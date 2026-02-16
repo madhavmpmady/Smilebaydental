@@ -29,7 +29,7 @@ export const doctors: Doctor[] = [
     id: 'dr-nadia',
     name: 'Dr. Nadia',
     title: 'Chief Dental Surgeon',
-    specialty: 'Prosthodontist',
+    specialty: 'Chief Dental Surgeon',
     image: '/images/dr-sarah-new.png',
     bio: 'Chief Dental Surgeon with extensive experience in comprehensive dental care and clinic management, dedicated to patient comfort and clinical excellence.',
     videoSrc: '/videos/implants.mp4', // Example video
