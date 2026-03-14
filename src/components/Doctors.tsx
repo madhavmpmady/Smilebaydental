@@ -158,11 +158,20 @@ export const doctors: Doctor[] = [
   {
     id: 'dr-binu-nathan',
     name: 'Dr. Binu Nathan',
-    title: 'Professor, Conservative and Endodontics, Educare Dental College',
-    specialty: 'Cosmetic Dentistry, Veneers',
-    // image removed for placeholder
-    bio: 'An expert in cosmetic dentistry and veneers, dedicated to creating perfect smiles.',
-    fullBio: 'Dr. Binu Nathan is a Professor in Conservative Dentistry and Endodontics at Educare Dental College. With extensive expertise in cosmetic dentistry, he specializes in transforming smiles using veneers and advanced aesthetic procedures.',
+    title: 'Professor, Educare Institute of Dental Sciences',
+    specialty: 'Endodontist and Smile Design Expert',
+    image: '/images/dr-binu-nathan.jpg',
+    bio: 'Professor at Educare Institute of Dental Sciences, specializing as an Endodontist and Smile Design Expert.',
+    fullBio: 'Dr. Binu Nathan is a Professor at Educare Institute of Dental Sciences. With extensive expertise as an Endodontist and Smile Design Expert, he specializes in transforming smiles using advanced aesthetic procedures and providing top-tier endodontic care.',
+  },
+  {
+    id: 'dr-pradeep-samuel',
+    name: 'Dr. Pradeep Samuel',
+    title: 'Professor, Educare Institute of Dental Sciences',
+    specialty: 'Prosthodontist and Implantologist',
+    bio: 'Professor at Educare Institute of Dental Sciences, specializing as a Prosthodontist and Implantologist.',
+    fullBio: 'Dr. Pradeep Samuel is a Professor at Educare Institute of Dental Sciences. With extensive expertise as a Prosthodontist and Implantologist, he specializes in comprehensive oral rehabilitation and dental implants.',
+    image: '/images/dr-pradeep-samuel.jpg',
   }
 ];
 
